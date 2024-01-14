@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BIT QUERY SYSTEM</title>
+    <style>
+        /* Custom CSS styles */
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            background-image: url('https://cutewallpaper.org/21/1920-x-1080-gif/1920x1080-Wallpapercartoon-Wallpapers-Driverlayer-Search-.gif');
+
+        }
+
+        #container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: aquamarine;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #7fffd4;
+        }
+
+        .ocean {
+            height: 5%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #015871;
+            display: none;
+            /* Initially hidden */
+        }
+
+
+        .wave {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+            position: absolute;
+            top: -198px;
+            width: 6400px;
+            height: 198px;
+            animation: newWave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .wave:nth-of-type(2) {
+            top: -175px;
+            animation: newWave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+            opacity: 1;
+        }
+
+        @keyframes newWave {
+            0% {
+                margin-left: 0;
+            }
+
+            100% {
+                margin-left: -1600px;
+            }
+        }
+
+        @keyframes swell {
+
+            0%,
+            100% {
+                transform: translate3d(0, -25px, 0);
+            }
+
+            50% {
+                transform: translate3d(0, 5px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div id="container">
+        <h1>Query System</h1>
+        <form action="/process" method="post">
+            <button id="queryButton" class="button" type="submit" onclick="startWaveAnimation()">Start Query System</button>
+
+        </form>
+        <div id="waveContainer" class="wave-container ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+    </div>
+    <script>
+        function startWaveAnimation() {
+            console.log("Wave animation started!");
+            document.getElementById('queryButton').style.display = 'none';
+            document.getElementById('waveContainer').style.display = 'block';
+        }
+    </script>
+    
+</body>
+
+</html>
